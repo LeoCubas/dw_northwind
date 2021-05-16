@@ -1,0 +1,9 @@
+version: 2
+
+models:
+  - name: dim_shippers
+    columns:
+      - name: sk_shipper
+        tests:
+          - unique
+          - not_null

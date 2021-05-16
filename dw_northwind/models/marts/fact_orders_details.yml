@@ -1,0 +1,9 @@
+version: 2
+
+models:
+  - name: fact_orders_details
+    columns:
+      - name: sk_order_detail
+        tests:
+          - unique
+          - not_null
