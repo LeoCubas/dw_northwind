@@ -15,7 +15,8 @@ with
     )
     , transformed_with_sk as (
         select
-            {{ dbt_utils.surrogate_key(['order_id']) }} as sk_order
+            {{ dbt_utils.surrogate_key(['order_id','product_id']) }} as sk_order_detail
+            , {{ dbt_utils.surrogate_key(['order_id']) }} as sk_order
             , {{ dbt_utils.surrogate_key(['product_id']) }} as sk_product
             , *
         from transformed
